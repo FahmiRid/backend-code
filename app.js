@@ -42,8 +42,168 @@ app.get("/data", (req, res) => {
       category: "Money transfer",
       movement: "d",
     },
+    {
+      btsid: 4,
+      match: 11,
+      field: "tranid",
+      type: "literal",
+      level: 1,
+      category: "Money transfer",
+      movement: "d",
+    },
+    {
+      btsid: 5,
+      match: 12,
+      field: "tranid",
+      type: "literal",
+      level: 1,
+      category: "Money transfer",
+      movement: "d",
+    },
+    {
+      btsid: 6,
+      match: 13,
+      field: "tranid",
+      type: "literal",
+      level: 1,
+      category: "Money transfer",
+      movement: "d",
+    },
+    {
+      btsid: 7,
+      match: 14,
+      field: "tranid",
+      type: "literal",
+      level: 1,
+      category: "Money transfer",
+      movement: "d",
+    },
+    {
+      btsid: 8,
+      match: 15,
+      field: "tranid",
+      type: "literal",
+      level: 1,
+      category: "Money transfer",
+      movement: "d",
+    },
+    {
+      btsid: 9,
+      match: 16,
+      field: "tranid",
+      type: "literal",
+      level: 1,
+      category: "Money transfer",
+      movement: "d",
+    },
+    {
+      btsid: 10,
+      match: 17,
+      field: "tranid",
+      type: "literal",
+      level: 1,
+      category: "Money transfer",
+      movement: "d",
+    },
   ];
   res.json(jsonData);
+});
+
+app.get("/data/dropDown", (req, res) => {
+  const jsonData = [
+    {
+      "fields": [
+        {
+          "name": "MCC",
+          "btsId": 3
+        },
+        {
+          "name": "TRANCODE",
+          "btsId": 1
+        },
+        {
+          "name": "TRANID",
+          "btsId": 2
+        }
+      ],
+      "types": [
+        {
+          "name": "LITERAL",
+          "btsId": 1
+        },
+        {
+          "name": "REGEX",
+          "btsId": 2
+        }
+      ],
+      "movements": [
+        {
+          "value": "C",
+          "btsId": 2
+        },
+        {
+          "value": "D",
+          "btsId": 1
+        }
+      ],
+      "btsCategories": [
+        {
+          "btsId": 1,
+          "name": "Automotive",
+          "colorCode": "#BE3BFF",
+          "image": "car.png",
+          "subCategories": [
+            {
+              "btsId": 1,
+              "name": "Automobile rental",
+              "colorCode": "#BE3BFF",
+              "image": "car.png",
+              "createdBy": "SYSTEM"
+            },
+            {
+              "btsId": 2,
+              "name": "Auto maintenance",
+              "colorCode": "#BE3BFF",
+              "image": "car.png",
+              "createdBy": "SYSTEM"
+            },
+          ]
+        },
+      ],
+
+      "btsSubCategories": [
+        {
+          "btsId": 1,
+          "name": "Automobile rental",
+          "colorCode": "#BE3BFF",
+          "image": "car.png",
+          "createdBy": "SYSTEM"
+        },
+        {
+          "btsId": 2,
+          "name": "Auto maintenance",
+          "colorCode": "#BE3BFF",
+          "image": "car.png",
+          "createdBy": "SYSTEM"
+        },
+        {
+          "btsId": 3,
+          "name": "Car wash",
+          "colorCode": "#BE3BFF",
+          "image": "car.png",
+          "createdBy": "SYSTEM"
+        },
+      ]
+    }
+  ];
+  res.json(jsonData);
+});
+
+// add new data
+app.post("/addData", (req, res) => {
+  const newData = req.body;
+  // logic to add new data to the existing dataset
+  res.send("New data added successfully");
 });
 
 app.put("/data/:btsid", (req, res) => {
